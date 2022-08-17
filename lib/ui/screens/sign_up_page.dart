@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_target/constants.dart';
-import 'package:flutter_target/widgets/text_form_custom.dart';
+import 'package:flutter_target/ui/widgets/text_form_custom.dart';
 
 class SignUpPage extends StatelessWidget {
   static const String id = 'login';
@@ -22,11 +22,7 @@ class SignUpPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 100.0),
                 child: Text(
                   kAppName,
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 10.0,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -43,11 +39,11 @@ class SignUpPage extends StatelessWidget {
                     TextFormCustom(kConfirmPassword),
                     TextFormCustom(kGender),
                     SizedBox(height: 10.0),
-                    MaterialButton(
-                      minWidth: 150.0,
-                      height: 50.0,
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(150.0, 50.0),
+                      ),
                       onPressed: () {},
-                      color: Colors.black,
                       child: Text(
                         kSignUp.toUpperCase(),
                         style: TextStyle(color: Colors.white),
