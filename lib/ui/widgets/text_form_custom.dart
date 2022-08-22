@@ -13,7 +13,8 @@ class TextFormCustom extends StatelessWidget {
           labelText.toUpperCase(),
           style: TextStyle(
             fontSize: 15.0,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 2.0,
           ),
         ),
         SizedBox(
