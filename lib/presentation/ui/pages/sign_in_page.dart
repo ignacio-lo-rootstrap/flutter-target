@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_target/constants.dart';
-import 'package:flutter_target/ui/screens/sign_in_page.dart';
-import 'package:flutter_target/ui/widgets/text_form_custom.dart';
+import 'package:flutter_target/presentation/ui/pages/sign_up_page.dart';
+import 'package:flutter_target/presentation/ui/widgets/text_form_custom.dart';
 
-class SignUpPage extends StatelessWidget {
-  static const String id = 'sign_up';
+class SignInPage extends StatelessWidget {
+  static const String id = 'sign_in';
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +34,8 @@ class SignUpPage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    TextFormCustom(kName),
                     TextFormCustom(kEmail),
                     TextFormCustom(kPassword),
-                    TextFormCustom(kConfirmPassword),
-                    TextFormCustom(kGender),
                     SizedBox(height: 10.0),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -46,7 +43,7 @@ class SignUpPage extends StatelessWidget {
                       ),
                       onPressed: () {},
                       child: Text(
-                        kSignUp.toUpperCase(),
+                        kSignIn.toUpperCase(),
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -59,10 +56,10 @@ class SignUpPage extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, SignInPage.id);
+                        Navigator.pushNamed(context, SignUpPage.id);
                       },
                       child: Text(
-                        kSignIn.toUpperCase(),
+                        kSignUp.toUpperCase(),
                         style: TextStyle(color: Colors.black),
                       ),
                     )

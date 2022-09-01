@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_target/theme/app_theme.dart';
-import 'package:flutter_target/ui/screens/sign_in_page.dart';
-import 'package:flutter_target/ui/screens/sign_up_page.dart';
+import 'package:flutter_target/presentation/theme/app_theme.dart';
+import 'package:flutter_target/presentation/ui/pages/sign_in_page.dart';
+import 'package:flutter_target/presentation/ui/pages/sign_up_page.dart';
 
 void main() => runApp(TargetApp());
 
