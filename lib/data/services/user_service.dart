@@ -14,9 +14,15 @@ class UserService implements UserRepository {
   }
 
   @override
-  void signUp(User user) async {
-    // final response = http.post(url);
-    // final response2 = getDio().post(NetConstants.signUp);
+  void signUp(String username, String email, String gender, String password,
+      String confirmPassword) {
+    final url = Uri.https(NetConstants.baseUrl, NetConstants.signUp);
+
+    final response = http.post(url);
+    final response2 = getDio().post(NetConstants.signIn);
+
+    print(response);
+    print(response2);
   }
 
   @override

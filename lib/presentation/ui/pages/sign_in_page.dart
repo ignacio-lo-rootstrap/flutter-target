@@ -34,8 +34,8 @@ class SignInPage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    TextFormCustom(kEmail),
-                    TextFormCustom(kPassword),
+                    TextFormCustom(labelText: kEmail),
+                    TextFormCustom(labelText: kPassword),
                     SizedBox(height: 10.0),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(

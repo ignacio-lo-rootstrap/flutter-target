@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_target/constants.dart';
+import 'package:flutter_target/domain/cubit/sign_up_cubit.dart';
 import 'package:flutter_target/presentation/ui/pages/sign_in_page.dart';
 import 'package:flutter_target/presentation/ui/widgets/text_form_custom.dart';
 
@@ -32,41 +34,72 @@ class SignUpPage extends StatelessWidget {
                   vertical: 180.0,
                   horizontal: 50.0,
                 ),
-                child: Column(
-                  children: [
-                    TextFormCustom(kName),
-                    TextFormCustom(kEmail),
-                    TextFormCustom(kPassword),
-                    TextFormCustom(kConfirmPassword),
-                    TextFormCustom(kGender),
-                    SizedBox(height: 10.0),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: Size(150.0, 50.0),
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        kSignUp.toUpperCase(),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    SizedBox(height: 20.0),
-                    Divider(
-                      indent: 60.0,
-                      endIndent: 60.0,
-                      thickness: 0.5,
-                      color: Colors.black,
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, SignInPage.id);
-                      },
-                      child: Text(
-                        kSignIn.toUpperCase(),
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    )
-                  ],
+                child: BlocBuilder<SignUpCubit, SignUpState>(
+                  builder: (context, state) {
+                    return Column(
+                      children: [
+                        TextFormCustom(
+                          labelText: kName,
+                          onTextChanged: (value) {
+                            context.read<SignUpCubit>().usernameChanged(value);
+                          },
+                        ),
+                        TextFormCustom(
+                          labelText: kEmail,
+                          onTextChanged: (value) {
+                            context.read<SignUpCubit>().emailChanged(value);
+                          },
+                        ),
+                        TextFormCustom(
+                          labelText: kGender,
+                          onTextChanged: (value) {
+                            context.read<SignUpCubit>().genderChanged(value);
+                          },
+                        ),
+                        TextFormCustom(
+                          labelText: kPassword,
+                          onTextChanged: (value) {
+                            context.read<SignUpCubit>().passwordChanged(value);
+                          },
+                        ),
+                        TextFormCustom(
+                          labelText: kConfirmPassword,
+                          onTextChanged: (value) {
+                            context
+                                .read<SignUpCubit>()
+                                .confirmPasswordChanged(value);
+                          },
+                        ),
+                        SizedBox(height: 10.0),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: Size(150.0, 50.0),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            kSignUp.toUpperCase(),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        SizedBox(height: 20.0),
+                        Divider(
+                          indent: 60.0,
+                          endIndent: 60.0,
+                          thickness: 0.5,
+                          color: Colors.black,
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, SignInPage.id);
+                          },
+                          child: Text(
+                            kSignIn.toUpperCase(),
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        )
+                      ],
+                    );
+                  },
                 ),
               )
             ],
