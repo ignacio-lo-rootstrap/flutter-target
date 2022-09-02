@@ -27,11 +27,9 @@ class SignInPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 180.0,
-                  horizontal: 50.0,
-                ),
+              Container(
+                margin: EdgeInsets.only(top: 180),
+                padding: EdgeInsets.symmetric(horizontal: 50.0),
                 child: Column(
                   children: [
                     TextFormCustom(kEmail),
