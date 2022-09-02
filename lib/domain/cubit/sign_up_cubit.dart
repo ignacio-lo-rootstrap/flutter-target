@@ -34,7 +34,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       _userRepository.signUp(state.username, state.email, state.gender,
           state.password, state.confirmPassword);
     } catch (e) {
-      //catch
+      //TODO
     }
   }
 }

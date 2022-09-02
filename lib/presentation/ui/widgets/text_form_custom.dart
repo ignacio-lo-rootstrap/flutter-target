@@ -27,6 +27,7 @@ class TextFormCustom extends StatelessWidget {
               borderRadius: BorderRadius.zero,
             ),
           ),
+          onChanged: onTextChanged,
         ),
         SizedBox(height: 10.0)
       ],
