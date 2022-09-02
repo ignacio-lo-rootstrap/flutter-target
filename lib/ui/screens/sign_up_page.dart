@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_target/constants.dart';
-import 'package:flutter_target/presentation/ui/pages/sign_up_page.dart';
-import 'package:flutter_target/presentation/ui/widgets/text_form_custom.dart';
+import 'package:flutter_target/ui/screens/sign_in_page.dart';
+import 'package:flutter_target/ui/widgets/text_form_custom.dart';
 
-class SignInPage extends StatelessWidget {
-  static const String id = 'sign_in';
+class SignUpPage extends StatelessWidget {
+  static const String id = 'sign_up';
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +32,11 @@ class SignInPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 50.0),
                 child: Column(
                   children: [
-                    TextFormCustom(labelText: kEmail),
-                    TextFormCustom(labelText: kPassword),
+                    TextFormCustom(kName),
+                    TextFormCustom(kEmail),
+                    TextFormCustom(kPassword),
+                    TextFormCustom(kConfirmPassword),
+                    TextFormCustom(kGender),
                     SizedBox(height: 10.0),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -41,7 +44,7 @@ class SignInPage extends StatelessWidget {
                       ),
                       onPressed: () {},
                       child: Text(
-                        kSignIn.toUpperCase(),
+                        kSignUp.toUpperCase(),
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -54,10 +57,10 @@ class SignInPage extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, SignUpPage.id);
+                        Navigator.pushNamed(context, SignInPage.id);
                       },
                       child: Text(
-                        kSignUp.toUpperCase(),
+                        kSignIn.toUpperCase(),
                         style: TextStyle(color: Colors.black),
                       ),
                     )
