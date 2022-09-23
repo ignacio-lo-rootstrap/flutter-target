@@ -41,39 +41,29 @@ class SignUpPage extends StatelessWidget {
                         children: [
                           TextFormCustom(
                             labelText: kName,
-                            onTextChanged: (value) {
-                              context
-                                  .read<SignUpCubit>()
-                                  .usernameChanged(value);
-                            },
+                            onTextChanged:
+                                context.read<SignUpCubit>().usernameChanged,
                           ),
                           TextFormCustom(
                             labelText: kEmail,
-                            onTextChanged: (value) {
-                              context.read<SignUpCubit>().emailChanged(value);
-                            },
+                            onTextChanged:
+                                context.read<SignUpCubit>().emailChanged,
                           ),
                           TextFormCustom(
                             labelText: kGender,
-                            onTextChanged: (value) {
-                              context.read<SignUpCubit>().genderChanged(value);
-                            },
+                            onTextChanged:
+                                context.read<SignUpCubit>().genderChanged,
                           ),
                           TextFormCustom(
                             labelText: kPassword,
-                            onTextChanged: (value) {
-                              context
-                                  .read<SignUpCubit>()
-                                  .passwordChanged(value);
-                            },
+                            onTextChanged:
+                                context.read<SignUpCubit>().passwordChanged,
                           ),
                           TextFormCustom(
                             labelText: kConfirmPassword,
-                            onTextChanged: (value) {
-                              context
-                                  .read<SignUpCubit>()
-                                  .confirmPasswordChanged(value);
-                            },
+                            onTextChanged: context
+                                .read<SignUpCubit>()
+                                .confirmPasswordChanged,
                           ),
                           SizedBox(height: 10.0),
                           BlocListener<SignUpCubit, SignUpState>(
