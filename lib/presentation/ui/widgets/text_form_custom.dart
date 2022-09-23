@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TextFormCustom extends StatelessWidget {
-  TextFormCustom(this.labelText);
+  final String labelText;
+  final Function(String)? onTextChanged;
 
-  late final String labelText;
+  TextFormCustom({required this.labelText, this.onTextChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,7 @@ class TextFormCustom extends StatelessWidget {
               borderRadius: BorderRadius.zero,
             ),
           ),
+          onChanged: onTextChanged,
         ),
         SizedBox(height: 10.0)
       ],
