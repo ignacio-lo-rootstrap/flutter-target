@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_target/domain/repositories/user_repository.dart';
+import 'package:flutter_target/utils/resource.dart';
 
 part 'sign_up_state.dart';
 
@@ -30,11 +31,14 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   void signUp() async {
-    try {
-      _userRepository.signUp(state.username, state.email, state.gender,
-          state.password, state.confirmPassword);
-    } catch (e) {
-      //TODO
-    }
+    emit(state.copyWith(status: SignUpStatus.loading));
+
+    final result = await _userRepository.signUp(state.username, state.email,
+        state.gender, state.password, state.confirmPassword);
+
+    result.when(
+      onSuccess: (_) => emit(state.copyWith(status: SignUpStatus.loading)),
+      onError: (_) => emit(state.copyWith(status: SignUpStatus.loading)),
+    );
   }
 }
