@@ -13,11 +13,14 @@ class UserService implements UserRepository {
   late LocalPreferences localPreferences;
 
   final options = BaseOptions(
-      baseUrl: NetConstants.baseUrl,
-      connectTimeout: NetConstants.connectTimeout,
-      receiveTimeout: NetConstants.receiveTimeout,
-      contentType: Headers.jsonContentType,
-      headers: {Headers.acceptHeader: Headers.jsonContentType});
+    baseUrl: NetConstants.baseUrl,
+    connectTimeout: NetConstants.connectTimeout,
+    receiveTimeout: NetConstants.receiveTimeout,
+    contentType: Headers.jsonContentType,
+    headers: {
+      Headers.acceptHeader: Headers.jsonContentType,
+    },
+  );
 
   Dio getDio() {
     final dio = Dio(options);
