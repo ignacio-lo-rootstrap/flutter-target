@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_target/constants.dart';
 import 'package:flutter_target/data/services/user_service.dart';
-import 'package:flutter_target/domain/cubit/sign_up_cubit.dart';
+import 'package:flutter_target/domain/cubit/sign_up/sign_up_cubit.dart';
 import 'package:flutter_target/presentation/ui/pages/sign_in_page.dart';
 import 'package:flutter_target/presentation/ui/widgets/text_form_custom.dart';
 
