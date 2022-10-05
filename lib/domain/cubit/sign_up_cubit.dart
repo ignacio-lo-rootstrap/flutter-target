@@ -33,8 +33,13 @@ class SignUpCubit extends Cubit<SignUpState> {
   void signUp() async {
     emit(state.copyWith(status: SignUpStatus.loading));
 
-    final result = await _userRepository.signUp(state.username, state.email,
-        state.gender, state.password, state.confirmPassword);
+    final result = await _userRepository.signUp(
+      state.username,
+      state.email,
+      state.gender,
+      state.password,
+      state.confirmPassword,
+    );
 
     result.when(
       onSuccess: (_) => emit(state.copyWith(status: SignUpStatus.loading)),
