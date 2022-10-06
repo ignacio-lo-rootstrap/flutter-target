@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 class TextFormCustom extends StatelessWidget {
   final String labelText;
   final Function(String)? onTextChanged;
+  final bool passwordStyle;
 
-  TextFormCustom({required this.labelText, this.onTextChanged});
+  TextFormCustom({
+    required this.labelText,
+    this.onTextChanged,
+    this.passwordStyle = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +33,7 @@ class TextFormCustom extends StatelessWidget {
             ),
           ),
           onChanged: onTextChanged,
+          obscureText: passwordStyle,
         ),
         SizedBox(height: 10.0)
       ],

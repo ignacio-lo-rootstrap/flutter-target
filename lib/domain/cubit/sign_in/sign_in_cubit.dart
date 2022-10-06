@@ -28,7 +28,9 @@ class SignInCubit extends Cubit<SignInState> {
 
     result.when(
       onSuccess: (_) => emit(state.copyWith(status: SignInStatus.success)),
-      onError: (_, __) => emit(state.copyWith(status: SignInStatus.error)),
+      onError: (error) => emit(
+        state.copyWith(status: SignInStatus.error, error: error.message),
+      ),
     );
   }
 }

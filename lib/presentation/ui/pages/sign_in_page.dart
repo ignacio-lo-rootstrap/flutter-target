@@ -48,12 +48,11 @@ class SignInPage extends StatelessWidget {
                             labelText: kPassword,
                             onTextChanged:
                                 context.read<SignInCubit>().passwordChanged,
+                            passwordStyle: true,
                           ),
                           SizedBox(height: 10.0),
                           BlocListener<SignInCubit, SignInState>(
-                            listener: (context, state) {
-                              print(state.status);
-                            },
+                            listener: (context, state) {},
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 minimumSize: Size(150.0, 50.0),

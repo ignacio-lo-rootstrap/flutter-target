@@ -3,6 +3,7 @@ import 'package:flutter_target/data/entities/user_credentials.dart';
 import 'package:flutter_target/data/entities/user_sign_in.dart';
 import 'package:flutter_target/data/entities/user_sign_up.dart';
 import 'package:flutter_target/data/shared_preferences/LocalPreferences.dart';
+import 'package:flutter_target/data/utils/http_status_code_message.dart';
 import 'package:flutter_target/data/utils/net_constants.dart';
 import 'package:flutter_target/domain/repositories/user_repository.dart';
 import 'package:flutter_target/utils/custom_exception.dart';
@@ -86,6 +87,10 @@ class UserService implements UserRepository {
       await saveUserCredentials(accessToken, client, uid, userId);
 
       return Success(true);
+    } on DioError catch (e) {
+      return Failure(
+        CustomException(networkErrorMessage(e.response?.statusCode ?? 0)),
+      );
     } catch (e) {
       return Failure(CustomException(e.toString()));
     }
