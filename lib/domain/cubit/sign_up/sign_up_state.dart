@@ -1,14 +1,12 @@
 part of 'sign_up_cubit.dart';
 
-enum SignUpStatus { initial, loading, success, error }
-
 class SignUpState extends Equatable {
   final String username;
   final String email;
   final String gender;
   final String password;
   final String confirmPassword;
-  final SignUpStatus status;
+  final CubitStatus status;
 
   const SignUpState({
     required this.username,
@@ -26,7 +24,7 @@ class SignUpState extends Equatable {
       gender: '',
       password: '',
       confirmPassword: '',
-      status: SignUpStatus.initial,
+      status: CubitStatus.initial,
     );
   }
 
@@ -36,7 +34,7 @@ class SignUpState extends Equatable {
     String? gender,
     String? password,
     String? confirmPassword,
-    SignUpStatus? status,
+    CubitStatus? status,
   }) {
     return SignUpState(
       username: username ?? this.username,
