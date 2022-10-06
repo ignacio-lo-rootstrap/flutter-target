@@ -9,4 +9,9 @@ abstract class UserRepository {
     String password,
     String confirmPassword,
   );
+
+  Future<Resource<bool, CustomException>> signIn(
+    String email,
+    String password,
+  );
 }

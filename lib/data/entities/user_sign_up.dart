@@ -5,12 +5,13 @@ class UserSignUp {
   final String password;
   final String confirmPassword;
 
-  UserSignUp(
-      {required this.username,
-      required this.email,
-      required this.gender,
-      required this.password,
-      required this.confirmPassword});
+  UserSignUp({
+    required this.username,
+    required this.email,
+    required this.gender,
+    required this.password,
+    required this.confirmPassword,
+  });
 
   Map<String, dynamic> toMap() {
     return {
