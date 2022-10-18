@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_target/data/entities/user_credentials.dart';
 import 'package:flutter_target/data/entities/user_sign_in.dart';
 import 'package:flutter_target/data/entities/user_sign_up.dart';
-import 'package:flutter_target/data/shared_preferences/LocalPreferences.dart';
+import 'package:flutter_target/data/shared_preferences/local_preferences.dart';
 import 'package:flutter_target/data/utils/http_status_code_message.dart';
 import 'package:flutter_target/data/utils/net_constants.dart';
 import 'package:flutter_target/domain/repositories/user_repository.dart';
